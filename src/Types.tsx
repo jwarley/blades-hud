@@ -1,11 +1,8 @@
-// import Map from "immutable";
+import * as firebase from "firebase/app";
 
 export interface Clock_t {
+    desc: string;
     progress: number;
     n_slices: number;
-}
-
-export interface Player {
-    // clocks: { [desc: string]: Clock_t };
-    clocks: Map<string, Clock_t>;
+    timestamp: firebase.firestore.Timestamp;
 }
