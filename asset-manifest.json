@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/blades-hud/static/js/main.6f021545.chunk.js",
+    "main.js.map": "/blades-hud/static/js/main.6f021545.chunk.js.map",
+    "runtime~main.js": "/blades-hud/static/js/runtime~main.72b0a475.js",
+    "runtime~main.js.map": "/blades-hud/static/js/runtime~main.72b0a475.js.map",
+    "static/js/2.97146951.chunk.js": "/blades-hud/static/js/2.97146951.chunk.js",
+    "static/js/2.97146951.chunk.js.map": "/blades-hud/static/js/2.97146951.chunk.js.map",
+    "index.html": "/blades-hud/index.html",
+    "precache-manifest.10866bba758c11982d6beae8c1c261ae.js": "/blades-hud/precache-manifest.10866bba758c11982d6beae8c1c261ae.js",
+    "service-worker.js": "/blades-hud/service-worker.js"
+  }
+}
