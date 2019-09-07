@@ -1,6 +1,6 @@
 import React from "react";
 import Konva from "konva";
-import { Stage, Layer, Wedge } from "react-konva";
+import { Stage, Layer, Wedge, Circle } from "react-konva";
 import { Clock_t } from "./Types";
 
 interface Props {
@@ -24,25 +24,43 @@ class Clock extends React.PureComponent<Props, {}> {
         const theta = 360 / this.props.clock.n_slices;
         let slices = [];
 
-        for (let i = 0; i < this.props.clock.n_slices; i++) {
+        if (this.props.clock.n_slices === 1) {
             slices.push(
-                <Wedge
-                    x={w / 2}
-                    y={h / 2}
+                <Circle
+                    x={w/2}
+                    y={w/2}
                     radius={60}
-                    angle={theta}
-                    fill={i < this.props.clock.progress ? "gray" : "white"}
+                    fill={this.props.clock.progress === 1 ? "gray" : "white"}
                     stroke={"black"}
                     strokeWidth={2}
-                    rotation={i * theta - 90}
                     onClick={this.props.incr_func}
                     onContextMenu={e => {
                         // Suppress right click menu on clocks
                         e.evt.preventDefault();
                     }}
-                    key={i.toString()}
                 />
             );
+        } else {
+            for (let i = 0; i < this.props.clock.n_slices; i++) {
+                slices.push(
+                    <Wedge
+                        x={w / 2}
+                        y={h / 2}
+                        radius={60}
+                        angle={theta}
+                        fill={i < this.props.clock.progress ? "gray" : "white"}
+                        stroke={"black"}
+                        strokeWidth={2}
+                        rotation={i * theta - 90}
+                        onClick={this.props.incr_func}
+                        onContextMenu={e => {
+                            // Suppress right click menu on clocks
+                            e.evt.preventDefault();
+                        }}
+                        key={i.toString()}
+                    />
+                );
+            }
         }
 
         return (

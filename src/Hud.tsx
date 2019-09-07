@@ -3,6 +3,7 @@ import ClockBar from "./ClockBar";
 import SignIn from "./SignIn";
 import Konva from "konva";
 import { Clock_t } from "./Types";
+import * as util from "./Util";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -17,6 +18,7 @@ interface State {
     unsub_fns: Function[];
 }
 
+
 class Hud extends React.PureComponent<{}, State> {
     private db = firebase.firestore();
 
@@ -24,6 +26,8 @@ class Hud extends React.PureComponent<{}, State> {
     constructor(props: {}) {
         super(props);
 
+        console.log(util.bring_to_front(players, "dogs"));            
+        console.log(players);            
         const unsub_auth = firebase.auth().onAuthStateChanged(user => {
             this.setState({ user: user });
             this.loadData();
@@ -164,20 +168,11 @@ class Hud extends React.PureComponent<{}, State> {
             </div>
             );
         } else { // if signed in
-            // const bring_to_front = (arr: string[], item: string) => {
-            //     for (let i = 0; i < arr.length; i++) {
-            //         if (arr[i] === item) {
-            //             return arr.splice(1, 0, arr.splice(i, 1)[0]);
-            //         }
-            //     }
-            //     return arr;
-            // };
-
-            // const ordered_players = bring_to_front(players.slice(0), this.state.current_player);
+            const ordered_players = ["group"].concat(util.bring_to_front(players.slice(1), this.state.current_player));
             return (
                 <div className="flex">
                     <div className="flex flex-column w-80">
-                        {players.map(owner => {
+                        {ordered_players.map(owner => {
                             return <div key={owner} className="">
                                 <ClockBar owner={owner}
                                           clocks={owner === "group"
