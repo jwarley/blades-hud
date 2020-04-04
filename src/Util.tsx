@@ -9,4 +9,8 @@ function bring_to_front(arr: string[], item: string): string[] {
     return cpy;
 };
 
-export {bring_to_front};
+function random_int(max:number){
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+export {bring_to_front, random_int};
