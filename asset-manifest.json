@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/blades-hud/static/js/main.1f901a34.chunk.js",
-    "main.js.map": "/blades-hud/static/js/main.1f901a34.chunk.js.map",
-    "runtime~main.js": "/blades-hud/static/js/runtime~main.72b0a475.js",
-    "runtime~main.js.map": "/blades-hud/static/js/runtime~main.72b0a475.js.map",
-    "static/js/2.5b903c7f.chunk.js": "/blades-hud/static/js/2.5b903c7f.chunk.js",
-    "static/js/2.5b903c7f.chunk.js.map": "/blades-hud/static/js/2.5b903c7f.chunk.js.map",
+    "main.js": "/blades-hud/static/js/main.930479f8.chunk.js",
+    "main.js.map": "/blades-hud/static/js/main.930479f8.chunk.js.map",
+    "runtime-main.js": "/blades-hud/static/js/runtime-main.935766e3.js",
+    "runtime-main.js.map": "/blades-hud/static/js/runtime-main.935766e3.js.map",
+    "static/js/2.2cbbf468.chunk.js": "/blades-hud/static/js/2.2cbbf468.chunk.js",
+    "static/js/2.2cbbf468.chunk.js.map": "/blades-hud/static/js/2.2cbbf468.chunk.js.map",
     "index.html": "/blades-hud/index.html",
-    "precache-manifest.2ce589303d42c19d724c6fd195fffbc7.js": "/blades-hud/precache-manifest.2ce589303d42c19d724c6fd195fffbc7.js",
+    "precache-manifest.2d011dee622f2d28815e615622b909f9.js": "/blades-hud/precache-manifest.2d011dee622f2d28815e615622b909f9.js",
     "service-worker.js": "/blades-hud/service-worker.js"
   }
 }
