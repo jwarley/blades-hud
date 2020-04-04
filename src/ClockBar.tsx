@@ -39,7 +39,7 @@ function ClockBar(props: Props) {
             <div className="p0">
                 <p className="ttc f3">{props.owner}</p>
             </div>
-            <div className="flex outline">
+            <div className="flex bt bb">
                 <div className="flex flex-column tc bg-blue pointer justify-center"
                      onClick={ () => {
                          const desc = window.prompt("What's the clock for?");
