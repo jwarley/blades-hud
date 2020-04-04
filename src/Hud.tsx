@@ -1,6 +1,7 @@
 import React from "react";
 import ClockBar from "./ClockBar";
 import SignIn from "./SignIn";
+import Dice from "./Dice";
 import Konva from "konva";
 import { Clock_t } from "./Types";
 import * as util from "./Util";
@@ -16,6 +17,7 @@ interface State {
     player_clocks: { [name: string]: Map<string, Clock_t> };
     current_player: string;
     unsub_fns: Function[];
+    dice:number[];
 }
 
 
@@ -44,11 +46,15 @@ class Hud extends React.PureComponent<{}, State> {
             },
             current_player: "bricks",
             unsub_fns: [unsub_auth],
+            dice: [1],
         };
 
         this.handle_clock_click = this.handle_clock_click.bind(this);
         this.new_clock = this.new_clock.bind(this);
         this.delete_clock = this.delete_clock.bind(this);
+        this.handle_die_click = this.handle_die_click.bind(this);
+        this.new_die = this.new_die.bind(this);
+        this.delete_die = this.delete_die.bind(this);
         this.change_player = this.change_player.bind(this);
     }
 
@@ -159,6 +165,27 @@ class Hud extends React.PureComponent<{}, State> {
         });
     }
 
+    private new_die() {
+        this.setState((state)=>({dice:[...state.dice, 1]}));
+    }
+
+    private delete_die() {
+        this.setState((state)=>({dice:state.dice.slice(0,-1)}));
+    }
+
+    private handle_die_click(index:number) {
+        this.setState((state)=>{
+            const dice = state.dice.map((item, i) => {
+                if (i === index) {
+                  return util.random_int(6)+1;
+                } else {
+                  return item;
+                }
+            });
+            return({dice:dice})
+        });
+    }
+
     public render() {
         // if not signed in
         if (!this.state.user) {
@@ -193,6 +220,12 @@ class Hud extends React.PureComponent<{}, State> {
                                 return <option value={player}>{player}</option>
                             }) }
                         </select>
+                        <Dice 
+                            dice={this.state.dice}
+                            new_func={this.new_die}
+                            delete_func={this.delete_die}
+                            click_func={this.handle_die_click}
+                        />
                     </div>
                 </div>
             );
