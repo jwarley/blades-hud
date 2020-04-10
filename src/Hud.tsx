@@ -9,11 +9,12 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-const players = ["group", "bricks", "shivers", "dogs", "tick tock"];
+const players = ["group", "world events", "bricks", "shivers", "dogs", "tick tock"];
 
 interface State {
     user: firebase.User | null;
     group_clocks: Map<string, Clock_t>;
+    world_event_clocks: Map<string, Clock_t>;
     player_clocks: { [name: string]: Map<string, Clock_t> };
     current_player: string;
     unsub_fns: Function[];
@@ -28,8 +29,6 @@ class Hud extends React.PureComponent<{}, State> {
     constructor(props: {}) {
         super(props);
 
-        console.log(util.bring_to_front(players, "dogs"));            
-        console.log(players);            
         const unsub_auth = firebase.auth().onAuthStateChanged(user => {
             this.setState({ user: user });
             this.loadData();
@@ -38,6 +37,7 @@ class Hud extends React.PureComponent<{}, State> {
         this.state = {
             user: null,
             group_clocks: new Map(),
+            world_event_clocks: new Map(),
             player_clocks: {
                 "bricks": new Map(),
                 "shivers": new Map(),
@@ -81,6 +81,10 @@ class Hud extends React.PureComponent<{}, State> {
                         if (players[i] === "group") {
                             this.setState({
                                 group_clocks: gc,
+                            });
+                        } else if (players[i] === "world events") {
+                            this.setState({
+                                world_event_clocks: gc,
                             });
                         } else {
                             this.setState((state, props) => {
@@ -172,17 +176,25 @@ class Hud extends React.PureComponent<{}, State> {
             </div>
             );
         } else { // if signed in
-            const ordered_players = ["group"].concat(util.bring_to_front(players.slice(1), this.state.current_player));
+            const ordered_players = ["world events", "group"].concat(util.bring_to_front(players.slice(2), this.state.current_player));
+
+            let get_clocks = (owner: string) => {
+                if (owner === "group") {
+                    return this.state.group_clocks;
+                } else if (owner === "world events") {
+                    return this.state.world_event_clocks;
+                } else {
+                    return this.state.player_clocks[owner];
+                }
+            }
+
             return (
                 <div className="flex">
                     <div className="flex flex-column w-80">
                         {ordered_players.map(owner => {
                             return <div key={owner} className="">
                                 <ClockBar owner={owner}
-                                          clocks={owner === "group"
-                                                      ? this.state.group_clocks
-                                                      : this.state.player_clocks[owner]
-                                                 }
+                                          clocks={get_clocks(owner)}
                                           click_func={this.handle_clock_click}
                                           new_func={this.new_clock}
                                           delete_func={this.delete_clock}
@@ -194,7 +206,8 @@ class Hud extends React.PureComponent<{}, State> {
                         <div className="flex flex-wrap">
                             <p className="f4">Which one are you?</p>
                             <select value={this.state.current_player} onChange={this.change_player}>
-                                { players.slice(1).map( player => { // slice off the "group" player
+                                { players.slice(2).map( player => {
+                                // slice off the "group" and "world events" players
                                     return <option value={player}>{player}</option>
                                 }) }
                             </select>
