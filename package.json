@@ -9,7 +9,7 @@
     "@types/react-dom": "latest",
     "firebase": "latest",
     "firebaseui": "latest",
-    "gh-pages": "latest",
+    "gh-pages": "^2.2.0",
     "grpc": "latest",
     "immutable": "latest",
     "konva": "latest",
@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
