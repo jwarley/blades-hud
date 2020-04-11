@@ -18,8 +18,9 @@ interface State {
     player_clocks: { [name: string]: Map<string, Clock_t> };
     current_player: string;
     unsub_fns: Function[];
-    dice:number[];
-    notes:string;
+    dice: number[];
+    notes: string;
+    view_mode: "clocks" | "map" | "notes";
 }
 
 
@@ -47,7 +48,8 @@ class Hud extends React.PureComponent<{}, State> {
             current_player: "bricks",
             unsub_fns: [unsub_auth],
             dice: [1],
-            notes:"",
+            notes: "",
+            view_mode: "clocks",
         };
 
         this.handle_clock_click = this.handle_clock_click.bind(this);
@@ -213,6 +215,12 @@ class Hud extends React.PureComponent<{}, State> {
                             </select>
                         </div>
                         <Tools/>
+                        <h3 className="tc">Here look at some map why not?</h3>
+                        <button className="bg-blue f3 flex-auto pointer tc br w-100"
+                            onClick={()=>window.open("https://cdn.discordapp.com/attachments/613747277881671693/695705793634238554/Bright_Harbor.png")}
+                        >
+                            Yes, do the aforementioned
+                        </button>
                     </div>
                 </div>
             );
