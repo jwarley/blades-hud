@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b6a775b69bc8c286a7a61c79af6013e4",
+    "revision": "dee53f51f3ada3a19dc3fdd493e51ce6",
     "url": "/blades-hud/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blades-hud/static/js/2.c3fafc12.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1bb3d4a575a1f587663e",
-    "url": "/blades-hud/static/js/main.2815a8e3.chunk.js"
+    "revision": "89181233d3917481141d",
+    "url": "/blades-hud/static/js/main.078f38a9.chunk.js"
   },
   {
     "revision": "528404517ca6eaac3b2a",

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/blades-hud/static/js/main.2815a8e3.chunk.js",
-    "main.js.map": "/blades-hud/static/js/main.2815a8e3.chunk.js.map",
+    "main.js": "/blades-hud/static/js/main.078f38a9.chunk.js",
+    "main.js.map": "/blades-hud/static/js/main.078f38a9.chunk.js.map",
     "runtime-main.js": "/blades-hud/static/js/runtime-main.67ad7e7a.js",
     "runtime-main.js.map": "/blades-hud/static/js/runtime-main.67ad7e7a.js.map",
     "static/js/2.c3fafc12.chunk.js": "/blades-hud/static/js/2.c3fafc12.chunk.js",
     "static/js/2.c3fafc12.chunk.js.map": "/blades-hud/static/js/2.c3fafc12.chunk.js.map",
     "index.html": "/blades-hud/index.html",
-    "precache-manifest.5686536b3ba5866ab8bcad59c7bd2755.js": "/blades-hud/precache-manifest.5686536b3ba5866ab8bcad59c7bd2755.js",
+    "precache-manifest.f4fc3dc02c2a6c97b8285fd91e26dc86.js": "/blades-hud/precache-manifest.f4fc3dc02c2a6c97b8285fd91e26dc86.js",
     "service-worker.js": "/blades-hud/service-worker.js",
     "static/js/2.c3fafc12.chunk.js.LICENSE.txt": "/blades-hud/static/js/2.c3fafc12.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.67ad7e7a.js",
     "static/js/2.c3fafc12.chunk.js",
-    "static/js/main.2815a8e3.chunk.js"
+    "static/js/main.078f38a9.chunk.js"
   ]
 }
