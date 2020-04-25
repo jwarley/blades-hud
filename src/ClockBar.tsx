@@ -23,7 +23,7 @@ function ClockBar(props: Props) {
                         incr_func={e => props.click_func(e, props.owner, id)}
                     />
                 </div>
-                
+
             </div>
         );
     });
