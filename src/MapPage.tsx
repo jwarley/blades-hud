@@ -102,7 +102,7 @@ class MapPage extends React.PureComponent<Props, State> {
 
     render(){
         return (
-            <div >
+            <div>
                 <img ref={this.element}
                     className = "w-100"
                     // style={{position:"absolute", left:0, top:0}} 
