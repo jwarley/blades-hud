@@ -16,15 +16,21 @@ function ClockBar(props: Props) {
         const clock = pair[1];
 
         return (
-            <div key={id} className="flex flex-column justify-between outline">
-                <div className="">
-                    <Clock
-                        clock={clock}
-                        incr_func={e => props.click_func(e, props.owner, id)}
-                    />
+                <div key={id} className="flex flex-column justify-between outline">
+                    <div className="">
+                        <Clock
+                            clock={clock}
+                            incr_func={e => props.click_func(e, props.owner, id)}
+                        />
+                    </div>
+                    <div className="tc pb2">
+                            <button className="ba pointer ph1"
+                               onClick={() => {
+                                   props.delete_func(id, props.owner);
+                               }}
+                            >Delete</button>
+                    </div>
                 </div>
-
-            </div>
         );
     });
 
