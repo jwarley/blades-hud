@@ -29,7 +29,7 @@ class Pages extends React.PureComponent<Props, State> {
 
     render() {
         return(
-            <div className="pa1 w-100" >
+            <div className="pa1 w-100 vh-100 overflow-y-scroll" >
                 <div className="flex flex-wrap" style={{justifyContent:"space-around"}}>
                     {pages.map(page =>{return(
                         <button className="bg-blue f3 flex-auto pointer tc br"
