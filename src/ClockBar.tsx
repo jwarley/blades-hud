@@ -23,13 +23,7 @@ function ClockBar(props: Props) {
                         incr_func={e => props.click_func(e, props.owner, id)}
                     />
                 </div>
-                <div className="tc pb2">
-                    <button className="ba pointer ph1"
-                       onClick={() => {
-                           props.delete_func(id, props.owner);
-                       }}
-                    >Delete</button>
-                </div>
+                
             </div>
         );
     });

@@ -15,6 +15,7 @@
     "konva": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.x",
+    "react-icons": "^3.10.0",
     "react-konva": "latest",
     "react-scripts": "latest",
     "typescript": "latest"
