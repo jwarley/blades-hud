@@ -19,6 +19,7 @@ interface Props {
     current_player: string;
     unsub_fns: Function[];
     db:firebase.firestore.Firestore;
+    page_active:boolean;
 }
 
 class MapPage extends React.PureComponent<Props, State> {
@@ -52,6 +53,12 @@ class MapPage extends React.PureComponent<Props, State> {
         window.removeEventListener("resize", this.updateDimensions.bind(this));
     }
 
+    componentDidUpdate(prevProps:Props) {
+        if (this.props.page_active !== prevProps.page_active) {
+            this.updateDimensions()
+        }
+    }
+
     private updateDimensions() {
         const element = this.element.current!
         this.setState({img_height:element.clientHeight, img_width:element.clientWidth})
@@ -81,8 +88,8 @@ class MapPage extends React.PureComponent<Props, State> {
     private handleMapClick(e:React.MouseEvent<HTMLElement>){
         let rect = (e.target as HTMLElement).getBoundingClientRect();
         let x:number = (e.clientX - rect.left)/(e.target as HTMLElement).offsetWidth;
-        let y:number = (e.clientY -(e.target as HTMLElement).offsetTop)/(e.target as HTMLElement).offsetHeight;
-        console.log((e.target as HTMLElement).offsetTop);
+        let y:number = (e.clientY - rect.top)/(e.target as HTMLElement).offsetHeight;
+        console.log(rect.top);
         this.newLandmark(x,y);
     }
 
@@ -102,18 +109,30 @@ class MapPage extends React.PureComponent<Props, State> {
 
     render(){
         return (
-            <div>
+            <div style={{position:"relative"}}>
                 <img ref={this.element}
-                    className = "w-100"
-                    // style={{position:"absolute", left:0, top:0}} 
+                    className = "w-100" 
                     src={map}  
+                    style={{position:"absolute"}}
                     onClick={e => this.handleMapClick(e)}/>
                 {
                     Array.from(this.state.landmarks).map((pair)=>{
                         const id = pair[0];
                         const landmark = pair[1];
                         return(
-                            <FaMapMarkerAlt onClick={()=>this.deleteLandmark(id)} style={{filter: "text-shadow(-1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000)", color: "red", position:"absolute", left:this.state.img_width*landmark.x, top:this.state.img_height*landmark.y}}/>
+                            <div 
+                                style={{position:"absolute", left:this.state.img_width*landmark.x, top:this.state.img_height*landmark.y}}
+                            >
+                                <IconContext.Provider value={{size:"2em", color: "red"}}>
+                                    <div>
+                                        <FaMapMarkerAlt 
+                                            onClick={()=>this.deleteLandmark(id)} 
+                                            className="pointer"
+                                            style={{position:"relative", left:"-50%", top:"-100%", transform:"translateY(-100%)"}}
+                                        />
+                                    </div>
+                                </IconContext.Provider>
+                            </div>
                         )
                     })
                 }

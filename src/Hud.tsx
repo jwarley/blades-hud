@@ -71,6 +71,10 @@ class Hud extends React.PureComponent<{}, State> {
                             </select>
                         </div>
                         <Tools/>
+                        <hr/>
+                        <p className="b f6 tc">
+                            Updated 5/2/2020
+                        </p>
                     </div>
                 </div>
             );

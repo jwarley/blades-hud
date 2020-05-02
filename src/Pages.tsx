@@ -44,7 +44,7 @@ class Pages extends React.PureComponent<Props, State> {
                     <ClockPage {...this.props}/>
                 </div>
                 <div style={{display: this.state.current_page==="Map" ? 'initial' : 'none' }}>
-                    <MapPage {...this.props}/>
+                    <MapPage page_active={this.state.current_page=="Map"} {...this.props}/>
                 </div>
                 <div style={{display: this.state.current_page==="Notes" ? 'initial' : 'none' }}>
                     <NotesPage {...this.props}/>
