@@ -1,5 +1,5 @@
 import React from "react";
-import map from "./img/bitd_s3_map.png"
+import map from "./img/bitd_s4_map.jpg"
 import { Landmark_t } from "./Types";
 import * as firebase from "firebase/app";
 import {FaMapMarkerAlt} from 'react-icons/fa';
