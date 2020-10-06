@@ -42,8 +42,10 @@ function ClockBar(props: Props) {
             <div className="flex bt bb">
                 <div className="flex flex-column tc bg-blue pointer justify-center"
                      onClick={ () => {
-                         const desc = window.prompt("What's the clock for?");
+                         const desc = window.prompt("What's the clock for?", "Nothin'");
+                         if(!desc){return;}
                          const n_slices = Number(window.prompt("How many slices?", "4"));
+                         if(!n_slices){return;}
                          props.new_func(props.owner, desc, n_slices);
                      }}
                 >

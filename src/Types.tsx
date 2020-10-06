@@ -11,6 +11,7 @@ export interface Landmark_t {
     name:string;
     desc: string;
     type:string;
+    color:string;
     x:number;
     y:number;
     timestamp: firebase.firestore.Timestamp;

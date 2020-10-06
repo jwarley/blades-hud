@@ -73,7 +73,7 @@ class Hud extends React.PureComponent<{}, State> {
                         <Tools/>
                         <hr/>
                         <p className="b f6 tc">
-                            Updated 5/2/2020
+                            Updated 10/6/2020!
                         </p>
                     </div>
                 </div>

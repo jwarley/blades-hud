@@ -22,6 +22,10 @@ class Dice extends React.PureComponent<{}, State> {
         this.setState((state)=>({dice:state.dice.slice(0,-1)}));
     }
 
+    private empty_dice() {
+        this.setState((state)=>({dice:[]}));
+    }
+
     private handle_die_click(index:number) {
         this.setState((state)=>{
             const dice = state.dice.map((item, i) => {
@@ -50,6 +54,11 @@ class Dice extends React.PureComponent<{}, State> {
         <div>
             <h3 className="tc">Here roll some dice why not?</h3>
             <div className="flex" style={{justifyContent:"space-around"}}>
+                <button className="bg-blue f2 flex-auto pointer tc br"
+                    onClick = {()=>this.empty_dice()}
+                >
+                    0
+                </button>
                 <button className="bg-blue f2 flex-auto pointer tc br"
                     onClick = {()=>this.delete_die()}
                 >
