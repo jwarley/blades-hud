@@ -6,6 +6,7 @@ interface Props {
     note: Notes_t;
     save_note:Function;
     cancel_edit_note:Function;
+    delete_note:Function;
 }
 
 interface State {
@@ -26,23 +27,51 @@ class EditNote extends React.PureComponent<Props,  State> {
         this.handle_change = this.handle_change.bind(this)
     }
 
-    private handle_change(event:React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>, field:"name"|"type"|"desc"){
+    private handle_change(event:React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>|React.ChangeEvent<HTMLSelectElement>, field:"name"|"type"|"desc"){
         this.setState(updateState(field, event.target.value!))
     }
 
     public render() {
-        return <div >
-            <input type="text" value={this.state.name} onChange={(e)=>this.handle_change(e, "name")} />
-            <input type="text" value={this.state.type} onChange={(e)=>this.handle_change(e, "type")} />
+        return <div className="w-100" >
+            <div className="w-100 flex justify-between">
+                <div className="flex flex-wrap" style={{justifyContent:"space-between"}}>
+                    <button className="bg-red  pointer tc br"
+                            onClick={()=>this.props.delete_note(this.props.id)}
+                    >
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <br/>
+            <label>
+            Name: <input type="text" value={this.state.name} onChange={(e)=>this.handle_change(e, "name")} />
+            </label>
+            <br/>
+            <label>
+            Type: <select  value={this.state.type}  onChange={(e)=>this.handle_change(e, "type")} >
+                <option value="Misc">Misc</option>
+                <option value="Person">Person</option>
+                <option value="Place">Place</option>
+                <option value="Boogins">Boogins</option>
+                <option value="Item">Item</option>
+                <option value="Concept">Concept</option>
+                <option value="Event">Event</option>
+            </select>
+            </label>
+            <br/>
+            <label>
+            Description: 
+            <br/>
             <textarea value={this.state.desc} onChange={(e)=>this.handle_change(e, "desc")} />
+            </label>
             <div className="w-100 flex justify-between">
                 <div className="flex flex-wrap" style={{justifyContent:"space-around"}}>
-                    <button className="bg-blue f3 flex-auto pointer tc br"
+                    <button className="bg-grey pointer tc br"
                             onClick={()=>this.props.cancel_edit_note(this.props.id)}
                     >
                         Cancel
                     </button>
-                    <button className="bg-blue f3 flex-auto pointer tc br"
+                    <button className="bg-blue pointer tc br"
                             onClick={()=>{
                                 this.props.save_note(this.props.id, this.state.name, this.state.type, this.state.desc)
                                 this.props.cancel_edit_note(this.props.id)

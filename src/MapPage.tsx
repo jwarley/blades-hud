@@ -192,19 +192,19 @@ class MapPage extends React.PureComponent<Props, State> {
                     backgroundColor:"white", border:"1px solid black", padding:"5px",
                 }}>
                     <div>
-                        <div>
-                            <button className="bg-red f3 flex-auto pointer tc br"
-                                    onClick={()=>this.deleteLandmark(this.state.selected_landmark)}
-                            >
-                                Delete
-                            </button>
-                            <button className="bg-blue f3 flex-auto pointer tc br"
+                        <div className="flex flex-row content-between">
+                            <button className="bg-grey flex-auto pointer tc br"
                                     onClick={()=>this.closePanel()}
                             >
                                 Close
                             </button>
+                            <button className="bg-red flex-auto pointer tc br"
+                                    onClick={()=>this.deleteLandmark(this.state.selected_landmark)}
+                            >
+                                Delete
+                            </button>
                         </div>
-                        <h1>{name}</h1>
+                        <h1 className="ma1">{name}</h1>
                     </div>
                     <div style={{width:"100%"}}>
                         <hr/>
