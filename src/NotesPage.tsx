@@ -23,6 +23,16 @@ interface Props {
     db:firebase.firestore.Firestore;
 }
 
+const color_map:Map<string,string> = new Map([
+    ["Misc","#ffadad"],
+    ["Person","#ffd6a5"],
+    ["Place","#fdffb6"],
+    ["Boogins","#caffbf"],
+    ["Concept","#9bf6ff"],
+    ["Item","#a0c4ff"],
+    ["Event","#ffc6ff"],
+])
+
 class NotesPage extends React.PureComponent<Props, State> {
     constructor(props: Props) {
         super(props);
@@ -64,9 +74,11 @@ class NotesPage extends React.PureComponent<Props, State> {
                     gl.set(id, notes[i]);
                     types.add(notes[i].type)
                 });
+                let types_arr = Array.from(types) as string[]
+                types_arr.sort()
                 this.setState({
                     notes: gl,
-                    types: Array.from(types) as string[],
+                    types: types_arr,
                 })
             });
 
@@ -120,11 +132,12 @@ class NotesPage extends React.PureComponent<Props, State> {
     }
 
     private display_default_note(id:string, note:Notes_t){
-        return <div style={{wordBreak:"break-all", overflow:"auto"}}>
-            <div className="w-100 flex justify-between">
+        return <div style={{wordBreak:"break-word", overflow:"auto"}}>
+            <div className="w-100 flex justify-between"
+                style = {{backgroundColor:color_map.get(note.type)}}
+            >
                 <div>
                     <h1 className="mv1">{note.name}</h1>
-                    <h2 className="mv1">{note.type}</h2>
                 </div>
                 <button className="bg-grey pointer tc br ml3"
                         onClick={()=>this.edit_note(id)}
@@ -133,7 +146,8 @@ class NotesPage extends React.PureComponent<Props, State> {
                 </button>
             </div>
             <hr/>
-            <p>{note.desc}</p>
+            <h2 className="mv1">{note.type}</h2>
+            <p style={{whiteSpace: "pre-wrap"}}>{note.desc}</p>
         </div>
     }
 
