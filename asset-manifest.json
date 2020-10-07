@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/blades-hud/static/js/main.d9750961.chunk.js",
-    "main.js.map": "/blades-hud/static/js/main.d9750961.chunk.js.map",
+    "main.js": "/blades-hud/static/js/main.a79990e2.chunk.js",
+    "main.js.map": "/blades-hud/static/js/main.a79990e2.chunk.js.map",
     "runtime-main.js": "/blades-hud/static/js/runtime-main.6b258845.js",
     "runtime-main.js.map": "/blades-hud/static/js/runtime-main.6b258845.js.map",
     "static/js/2.e2af1bcb.chunk.js": "/blades-hud/static/js/2.e2af1bcb.chunk.js",
     "static/js/2.e2af1bcb.chunk.js.map": "/blades-hud/static/js/2.e2af1bcb.chunk.js.map",
     "index.html": "/blades-hud/index.html",
-    "precache-manifest.3d312fd17be02c5be080a561e928bd25.js": "/blades-hud/precache-manifest.3d312fd17be02c5be080a561e928bd25.js",
+    "precache-manifest.6a4fed1949304b45341f6f7c471d4a1c.js": "/blades-hud/precache-manifest.6a4fed1949304b45341f6f7c471d4a1c.js",
     "service-worker.js": "/blades-hud/service-worker.js",
     "static/js/2.e2af1bcb.chunk.js.LICENSE.txt": "/blades-hud/static/js/2.e2af1bcb.chunk.js.LICENSE.txt",
     "static/media/bitd_s4_map.jpg": "/blades-hud/static/media/bitd_s4_map.f5c67ae5.jpg"
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.6b258845.js",
     "static/js/2.e2af1bcb.chunk.js",
-    "static/js/main.d9750961.chunk.js"
+    "static/js/main.a79990e2.chunk.js"
   ]
 }
