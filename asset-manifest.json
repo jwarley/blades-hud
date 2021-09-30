@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/blades-hud/static/js/main.89810820.chunk.js",
-    "main.js.map": "/blades-hud/static/js/main.89810820.chunk.js.map",
+    "main.js": "/blades-hud/static/js/main.0ad2c906.chunk.js",
+    "main.js.map": "/blades-hud/static/js/main.0ad2c906.chunk.js.map",
     "runtime-main.js": "/blades-hud/static/js/runtime-main.6b258845.js",
     "runtime-main.js.map": "/blades-hud/static/js/runtime-main.6b258845.js.map",
     "static/js/2.dbd28500.chunk.js": "/blades-hud/static/js/2.dbd28500.chunk.js",
     "static/js/2.dbd28500.chunk.js.map": "/blades-hud/static/js/2.dbd28500.chunk.js.map",
     "index.html": "/blades-hud/index.html",
-    "precache-manifest.fe3610fa8f685459a30947c87e668ee7.js": "/blades-hud/precache-manifest.fe3610fa8f685459a30947c87e668ee7.js",
+    "precache-manifest.6c8ac1394c3542a738ee68f53f77f48c.js": "/blades-hud/precache-manifest.6c8ac1394c3542a738ee68f53f77f48c.js",
     "service-worker.js": "/blades-hud/service-worker.js",
     "static/js/2.dbd28500.chunk.js.LICENSE.txt": "/blades-hud/static/js/2.dbd28500.chunk.js.LICENSE.txt",
-    "static/media/bitd_s4_map.jpg": "/blades-hud/static/media/bitd_s4_map.f5c67ae5.jpg"
+    "static/media/grinasberg_labelled.png": "/blades-hud/static/media/grinasberg_labelled.17b02df1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6b258845.js",
     "static/js/2.dbd28500.chunk.js",
-    "static/js/main.89810820.chunk.js"
+    "static/js/main.0ad2c906.chunk.js"
   ]
 }

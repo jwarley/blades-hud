@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7440a0b18c67bcafa07dbec228142d76",
+    "revision": "16eca87a8a4c4c17c9335ac1300098b3",
     "url": "/blades-hud/index.html"
   },
   {
@@ -12,15 +12,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blades-hud/static/js/2.dbd28500.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "18e23623391c02d59ab2",
-    "url": "/blades-hud/static/js/main.89810820.chunk.js"
+    "revision": "6a0a9804da1076745b3c",
+    "url": "/blades-hud/static/js/main.0ad2c906.chunk.js"
   },
   {
     "revision": "dc19e11a0df274790ba4",
     "url": "/blades-hud/static/js/runtime-main.6b258845.js"
   },
   {
-    "revision": "f5c67ae59a0abbd6bf47e6cd5d9da51b",
-    "url": "/blades-hud/static/media/bitd_s4_map.f5c67ae5.jpg"
+    "revision": "17b02df1ca7fd2c6055436397d36ff1e",
+    "url": "/blades-hud/static/media/grinasberg_labelled.17b02df1.png"
   }
 ]);
