@@ -1,0 +1,52 @@
+.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark-mode {
+    background-color: #1d2025;
+    color: #f0f4f8;
+}
+.dark-mode .bg-light-blue {
+    background-color: #20588e;
+    color: #f0f4f8;
+}
+.dark-mode .bg-light-gray {
+    background-color: #222;
+    color: #f0f4f8;
+    border-color: #666;
+}
+.dark-mode .bg-grey {
+    background-color: #484e54;
+    color: #f0f4f8;
+}
+.dark-mode .bg-washed-blue {
+    background-color: #142b3a;
+}
+.dark-mode .dice {
+    border-color: #000;
+}
+.dark-mode .dice-number,
+.dark-mode .label {
+    color: #1d2025;
+}
+.dark-mode .toggle {
+    color: #f0f4f8;
+}
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+    background-color: #1d2025;
+    color: #f0f4f8;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px #ffa4bd;
+}
+.dark-mode canvas {
+    filter: invert(85%);
+}
