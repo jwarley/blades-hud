@@ -1,14 +1,13 @@
 import * as React from "react";
-import Dice from "./Dice"
-import Notes from "./Notes"
+import Dice from "./ToolsDice"
+import Memos from "./ToolsMemos"
 
 interface State {
     current_tool:string;
 }
 
 const tools:string[] = ["dice"];
-// const tools:string[] = ["dice", "notes"];
-
+// const tools:string[] = ["dice", "memos"];
 
 class Tools extends React.PureComponent<{}, State> {
     constructor(props: {}) {
@@ -23,8 +22,8 @@ class Tools extends React.PureComponent<{}, State> {
         switch(option){
             case "dice":
                 return(<Dice/>)
-            case "notes":
-                return(<Notes/>)
+            case "memos":
+                return(<Memos/>)
             default:
                 return(null)
         }
@@ -32,7 +31,7 @@ class Tools extends React.PureComponent<{}, State> {
 
     render() {
         return(
-            <div className="pa1">
+            <div className="pl1 pr1 pb1">
                 <Dice/>
             </div>
         )

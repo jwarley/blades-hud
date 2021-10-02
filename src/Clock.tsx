@@ -30,7 +30,7 @@ class Clock extends React.PureComponent<Props, {}> {
                     x={w/2}
                     y={w/2}
                     radius={60}
-                    fill={this.props.clock.progress === 1 ? "gray" : "white"}
+                    fill={this.props.clock.progress === 1 ? "#a463f2" : "white"}
                     stroke={"black"}
                     strokeWidth={2}
                     onClick={this.props.incr_func}
@@ -48,7 +48,7 @@ class Clock extends React.PureComponent<Props, {}> {
                         y={h / 2}
                         radius={60}
                         angle={theta}
-                        fill={i < this.props.clock.progress ? "gray" : "white"}
+                        fill={i < this.props.clock.progress ? "#a463f2" : "white"}
                         stroke={"black"}
                         strokeWidth={2}
                         rotation={i * theta - 90}
@@ -65,12 +65,12 @@ class Clock extends React.PureComponent<Props, {}> {
 
         return (
             <div className="flex flex-column mw5">
-                <div className="pa3 mw5 self-center">
+                <div className="ph3 mv2 mw5 self-center">
                     <Stage width={w} height={h}>
                         <Layer>{slices}</Layer>
                     </Stage>
                 </div>
-                <p className="tc pa1 ws-normal">{this.props.clock.desc}</p>
+                <p className="tc ph1 ws-normal">{this.props.clock.desc}</p>
             </div>
         );
     }
